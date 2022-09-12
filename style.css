@@ -1,0 +1,80 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --vidHeight: 200px;
+    --vidWidth: 240px;
+    --flexHeight: 200px;
+    --flexWidth: 600px;
+  }
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+.containerBox {
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    transition: height 2s;
+}
+.newContainerBox{
+    height:200px;
+    
+}
+
+.flexContainer {
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.videoContainer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 180px;
+    transition: all 2s;
+    transform: translateY(4px);
+    
+}
+.newVideoContainer{
+    width: 240px;
+}
+video{
+    width: 100%;
+    height: 100%;    /* object-fit: cover; */
+}
+
+.imageContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    width: calc(600px - var(--vidWidth));
+    height: 125px;
+    background-color: cyan;
+    transition: all 2s;
+}
+.newImageContainer {
+    height:200px;
+    width:300px;
+}
+
+
