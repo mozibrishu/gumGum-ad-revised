@@ -1,12 +1,12 @@
-let containerBox = document.querySelector('.containerBox');
-let flexContainer = document.querySelector('.flexContainer');
+let containerBox = document.querySelector('#containerBox');
+let flexContainer = document.querySelector('#flexContainer');
+let videoContainer = document.querySelector('#videoContainer');
+let imageTextContainer = document.querySelector('#imageTextContainer');
 
-let videoContainer = document.querySelector('.videoContainer');
-let imageContainer = document.querySelector('.imageContainer');
 
+document.querySelector('.blueBox').addEventListener('mouseover', ()=>{
 
-document.querySelector('.containerBox').addEventListener('mouseover', ()=>{
-    document.querySelector('.imageContainer').classList.add('newImageContainer');
+    imageTextContainer.classList.add('newImageTextContainer');
 
     document.querySelector('.containerBox').classList.add('newContainerBox');
     document.querySelector('.videoContainer').classList.add('newVideoContainer');
@@ -15,8 +15,10 @@ document.querySelector('.containerBox').addEventListener('mouseover', ()=>{
 });
 
 document.querySelector('.containerBox').addEventListener('mouseout', ()=>{
-    document.querySelector('.imageContainer').classList.remove('newImageContainer');
+    document.querySelector('.imageTextContainer').classList.remove('newImageTextContainer');
     document.querySelector('.containerBox').classList.remove('newContainerBox');
     document.querySelector('.videoContainer').classList.remove('newVideoContainer');
 
 });
+
+
