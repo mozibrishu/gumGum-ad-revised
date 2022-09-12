@@ -4,7 +4,7 @@ let videoContainer = document.querySelector('#videoContainer');
 let imageTextContainer = document.querySelector('#imageTextContainer');
 
 
-document.querySelector('.blueBox').addEventListener('mouseover', ()=>{
+document.querySelector('.containerBox').addEventListener('mouseover', ()=>{
 
     imageTextContainer.classList.add('newImageTextContainer');
 
