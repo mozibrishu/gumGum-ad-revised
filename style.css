@@ -25,8 +25,17 @@ body {
     transition: height 1s;
 }
 
+
 .newContainerBox {
     height: 200px;
+}
+
+.minContainerBox {
+    height: 150px;
+}
+
+.newMinContainerBox {
+    height: 250px;
 }
 
 .blueBox {
@@ -44,6 +53,12 @@ body {
     height: 100%;
     width: 500px;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.minFlexContainer {
+    width: 360px;
+    background-color: #2175D6;
 }
 
 .videoContainer {
@@ -53,6 +68,7 @@ body {
     height: 150px;
     width: 180px;
     transition: all 2s;
+    /* z-index: 33; */
     /* transform: translateY(4px); */
 
 }
@@ -62,13 +78,25 @@ body {
     height: 200px;
 }
 
+.minVideoContainer {
+    height: 150px;
+    width: 180px;
+}
+
+.newMinVideoContainer {
+    top: 0px;
+    height: 180px;
+    width: 360px;
+}
+
 video {
     width: 100%;
     height: 100%;
+    z-index: 33;
     object-fit: contain;
 }
 
-.video-controls{
+.video-controls {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -78,10 +106,13 @@ video {
     flex-direction: row;
     padding: 3px;
 }
+
 .material-icons {
     font-size: 15px;
 }
-#toggle,#sound{
+
+#toggle,
+#sound {
     color: white;
     background-color: #2175D6;
     border: none;
@@ -106,6 +137,15 @@ video {
     width: 260px;
 }
 
+.minImageTextContainer {
+    width: 180px;
+    height: 150px;
+}
+.newMinImageTextContainer { 
+    width: 100%;
+    height: 60px;
+}
+
 .buynow {
     top: 35px;
     left: 20px;
@@ -115,30 +155,44 @@ video {
 .buynow-move {
     top: 160px;
     left: 85px;
-    
+
 }
 
+.minBuyNow {
+    top: 160px;
+    left: 20px;
+}
 
-.Onegb{
+.Onegb {
     top: 22px;
     left: 224px;
     height: 55px;
     transition: all 1.5s;
 }
+
 .Onegb-move {
     top: 22px;
     left: 132px;
     height: 70px;
 }
 
-.imageText{
+.minOnegb {
+    top: 20px;
+    left: 45px;
+}
+.newMinOnegb{
+    top: 10px;
+    left: 255px;
+    height: 50px;
+}
+.imageText {
     top: 24px;
     left: 125px;
     height: 35px;
-    transition: opacity 1s;
+    transition: all 1s;
 }
 
-.imageTextMove{
+.imageTextMove {
     top: 34px;
     left: 13px;
     height: 50px;
@@ -146,6 +200,17 @@ video {
     transition: opacity 1s;
 }
 
+.minImageText {
+    top: 88px;
+    left: 44px;
+    height: 45px;
+}
+
+.newMinImageText{
+    top: 10px;
+    left: 150px;
+    height: 40px;
+}
 
 .containerBox-animation {
     animation: containerBox 1.5s linear forwards;
@@ -168,7 +233,9 @@ video {
 }
 
 @keyframes pulse-animation {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
 
@@ -197,6 +264,6 @@ video {
     position: absolute;
 }
 
-.hidden{
+.hidden {
     display: none;
 }

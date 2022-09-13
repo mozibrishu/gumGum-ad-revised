@@ -2,20 +2,41 @@ let containerBox = document.querySelector('#containerBox');
 let flexContainer = document.querySelector('#flexContainer');
 let videoContainer = document.querySelector('#videoContainer');
 let imageTextContainer = document.querySelector('#imageTextContainer');
+let buynow = document.querySelector('#buynow');
+let Onegb = document.querySelector('#Onegb');
+let imageText = document.querySelector('#imageText');
+
 let mute = 1;
 playMute();
-let listenerIn;
-let listenerOut;
+
+let listenerIn = () => { };
+let listenerOut = () => { };
+checkMediaQuery();
 window.addEventListener('resize', checkMediaQuery);
+
 function checkMediaQuery() {
     // If the inner width of the window is greater then 768px
     if (window.innerWidth > 768) {
+        flexContainer.classList.remove('minFlexContainer');
+        containerBox.classList.remove('minContainerBox');
+        videoContainer.classList.remove('minVideoContainer');
+        imageTextContainer.classList.remove('minImageTextContainer');
+        buynow.classList.remove('hidden');
+        Onegb.classList.remove('minOnegb');
+        imageText.classList.remove('minImageText');
         listenerIn = maxFirst;
         listenerOut = maxSecond;
         document.querySelector('.containerBox').addEventListener('mouseover', listenerIn);
         document.querySelector('.containerBox').addEventListener('mouseout', listenerOut);
     }
-    else{
+    else {
+        flexContainer.classList.add('minFlexContainer');
+        containerBox.classList.add('minContainerBox');
+        videoContainer.classList.add('minVideoContainer');
+        imageTextContainer.classList.add('minImageTextContainer');
+        buynow.classList.add('hidden');
+        Onegb.classList.add('minOnegb');
+        imageText.classList.add('minImageText');
         listenerIn = minFirst;
         listenerOut = minSecond;
         document.querySelector('.containerBox').addEventListener('mouseover', listenerIn);
@@ -38,10 +59,12 @@ function maxFirst() {
     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
     document.querySelector('.imageTextMove').style.opacity = 1;
 }
+
 function maxSecond() {
-    document.querySelector('.imageTextContainer').classList.remove('newImageTextContainer');
-    document.querySelector('.containerBox').classList.remove('newContainerBox');
-    document.querySelector('.videoContainer').classList.remove('newVideoContainer');
+    imageTextContainer.classList.remove('newImageTextContainer');
+    containerBox.classList.remove('newContainerBox');
+    videoContainer.classList.remove("newVideoContainer");
+    
     document.querySelector('.buynow').classList.remove('buynow-move');
     document.querySelector('.Onegb').classList.remove('Onegb-move');
     document.querySelector('.imageText').style.opacity = 1;
@@ -49,20 +72,44 @@ function maxSecond() {
     document.querySelector('.imageTextMove').classList.remove('imageTextMove-animation');
 }
 
-// function minFirst() {
 
-//     imageTextContainer.classList.add('newImageTextContainer');
 
-//     document.querySelector('.containerBox').classList.add('newContainerBox');
-//     document.querySelector('.videoContainer').classList.add('newVideoContainer');
-//     document.querySelector('.buynow').classList.add('buynow-move');
-//     document.querySelector('.Onegb').classList.add('Onegb-move');
+function minFirst() {
 
-//     document.querySelector('.imageText').style.opacity = 0;
+    containerBox.classList.add('newMinContainerBox');
+    videoContainer.classList.add('newMinVideoContainer');
+    imageTextContainer.classList.add('newMinImageTextContainer');
+    Onegb.classList.add('newMinOnegb');
+    imageText.classList.add('newMinImageText');
+    // imageTextContainer.classList.add('newImageTextContainer');
 
-//     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
-//     document.querySelector('.imageTextMove').style.opacity = 1;
-// }
+    // document.querySelector('.containerBox').classList.add('newContainerBox');
+    // document.querySelector('.videoContainer').classList.add('newVideoContainer');
+    // document.querySelector('.buynow').classList.add('buynow-move');
+    // document.querySelector('.Onegb').classList.add('Onegb-move');
+
+    // document.querySelector('.imageText').style.opacity = 0;
+
+    // document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
+    // document.querySelector('.imageTextMove').style.opacity = 1;
+}
+
+function minSecond() {
+
+    containerBox.classList.remove('newMinContainerBox');
+    videoContainer.classList.remove('newMinVideoContainer');
+    imageTextContainer.classList.remove('newMinImageTextContainer');
+    Onegb.classList.remove('newMinOnegb');
+    imageText.classList.remove('newMinImageText'); 
+
+}
+
+
+
+
+
+
+
 
 // video code
 function playMute() {
@@ -108,11 +155,6 @@ function playMute() {
             sound.innerHTML = volumeOff;
             mute = 1;
         }
-        // var soundIcon = video.muted ? volumeUp : volumeOff;
-        // sound.innerHTML = soundIcon;
-
-        // if (video.muted) video.muted = false;
-        // else video.muted = true;
     }
 
     video.addEventListener('play', updatePlayPause);
