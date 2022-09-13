@@ -24,10 +24,12 @@ body {
     padding: 0;
     transition: height 1s;
 }
-.newContainerBox{
-    height:200px;
+
+.newContainerBox {
+    height: 200px;
 }
-.blueBox{
+
+.blueBox {
     position: absolute;
     bottom: 0px;
     background-color: gainsboro;
@@ -35,6 +37,7 @@ body {
     width: 100%;
     z-index: -1;
 }
+
 .flexContainer {
     position: relative;
     justify-content: center;
@@ -51,15 +54,17 @@ body {
     width: 180px;
     transition: all 2s;
     /* transform: translateY(4px); */
-    
+
 }
-.newVideoContainer{
+
+.newVideoContainer {
     width: 240px;
     height: 200px;
 }
-video{
+
+video {
     width: 100%;
-    height: 100%;    
+    height: 100%;
     object-fit: contain;
 }
 
@@ -71,24 +76,105 @@ video{
     height: 100px;
     background-color: rgb(67, 130, 231);
     transition: all 2s;
+    overflow: hidden;
 }
+
 .newImageTextContainer {
-    height:200px;
-    width:260px;
+    height: 200px;
+    width: 260px;
+}
+
+.buynow {
+    top: 35px;
+    left: 20px;
+    transition: all 1.5s;
+}
+
+.buynow-move {
+    top: 160px;
+    left: 85px;
+    
 }
 
 
+.Onegb{
+    top: 22px;
+    left: 224px;
+    height: 55px;
+    transition: all 1.5s;
+}
+.Onegb-move {
+    top: 22px;
+    left: 132px;
+    height: 70px;
+}
 
-.containerBox-animation{
+.imageText{
+    top: 24px;
+    left: 125px;
+    height: 35px;
+    transition: opacity 1s;
+}
+
+.imageTextMove{
+    top: 34px;
+    left: 13px;
+    height: 50px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+
+.containerBox-animation {
     animation: containerBox 1.5s linear forwards;
 }
+
 @keyframes containerBox {
     0% {
         transform: translateY(200px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+.pulse-animation {
+    animation: pulse-animation 1s linear infinite;
+}
+
+@keyframes pulse-animation {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.95);
+    }
+}
+
+
+
+.imageTextMove-animation {
+    animation: imageTextMove 1.5s linear forwards;
+}
+
+@keyframes imageTextMove {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.absolute {
+    position: absolute;
+}
+
+.hidden{
+    display: none;
 }
