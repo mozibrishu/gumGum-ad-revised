@@ -29,11 +29,11 @@ document.querySelector('.containerBox').addEventListener('mouseout', ()=>{
     document.querySelector('.imageTextMove').style.opacity = 0;
     document.querySelector('.imageTextMove').classList.remove('imageTextMove-animation');
 });
-
+playMute();
 
 function playMute() {
     var player = document.querySelector('#videoContainer');
-    var video = player.querySelector('.myVideo');
+    var video = player.querySelector('#myVideo');
     var toggle = player.querySelector('#toggle');
     var sound = player.querySelector('#sound');
     
