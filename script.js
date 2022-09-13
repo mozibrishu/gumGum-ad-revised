@@ -3,8 +3,28 @@ let flexContainer = document.querySelector('#flexContainer');
 let videoContainer = document.querySelector('#videoContainer');
 let imageTextContainer = document.querySelector('#imageTextContainer');
 let mute = 1;
+playMute();
+let listenerIn;
+let listenerOut;
+window.addEventListener('resize', checkMediaQuery);
+function checkMediaQuery() {
+    // If the inner width of the window is greater then 768px
+    if (window.innerWidth > 768) {
+        listenerIn = maxFirst;
+        listenerOut = maxSecond;
+        document.querySelector('.containerBox').addEventListener('mouseover', listenerIn);
+        document.querySelector('.containerBox').addEventListener('mouseout', listenerOut);
+    }
+    else{
+        listenerIn = minFirst;
+        listenerOut = minSecond;
+        document.querySelector('.containerBox').addEventListener('mouseover', listenerIn);
+        document.querySelector('.containerBox').addEventListener('mouseout', listenerOut);
+    }
+}
 
-document.querySelector('.containerBox').addEventListener('mouseover', () => {
+
+function maxFirst() {
 
     imageTextContainer.classList.add('newImageTextContainer');
 
@@ -17,9 +37,8 @@ document.querySelector('.containerBox').addEventListener('mouseover', () => {
 
     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
     document.querySelector('.imageTextMove').style.opacity = 1;
-});
-
-document.querySelector('.containerBox').addEventListener('mouseout', () => {
+}
+function maxSecond() {
     document.querySelector('.imageTextContainer').classList.remove('newImageTextContainer');
     document.querySelector('.containerBox').classList.remove('newContainerBox');
     document.querySelector('.videoContainer').classList.remove('newVideoContainer');
@@ -28,28 +47,22 @@ document.querySelector('.containerBox').addEventListener('mouseout', () => {
     document.querySelector('.imageText').style.opacity = 1;
     document.querySelector('.imageTextMove').style.opacity = 0;
     document.querySelector('.imageTextMove').classList.remove('imageTextMove-animation');
-});
-playMute();
-
-
-
-
-
-
-
-
-
-
-function checkMediaQuery() {
-    // If the inner width of the window is greater then 768px
-    if (window.innerWidth > 768) {
-        console.log('Media Query Matched!')
-    }
 }
-window.addEventListener('resize', checkMediaQuery);
 
+// function minFirst() {
 
+//     imageTextContainer.classList.add('newImageTextContainer');
 
+//     document.querySelector('.containerBox').classList.add('newContainerBox');
+//     document.querySelector('.videoContainer').classList.add('newVideoContainer');
+//     document.querySelector('.buynow').classList.add('buynow-move');
+//     document.querySelector('.Onegb').classList.add('Onegb-move');
+
+//     document.querySelector('.imageText').style.opacity = 0;
+
+//     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
+//     document.querySelector('.imageTextMove').style.opacity = 1;
+// }
 
 // video code
 function playMute() {
