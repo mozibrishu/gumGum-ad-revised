@@ -141,7 +141,8 @@ video {
     width: 180px;
     height: 150px;
 }
-.newMinImageTextContainer { 
+
+.newMinImageTextContainer {
     width: 100%;
     height: 60px;
 }
@@ -162,7 +163,11 @@ video {
     top: 160px;
     left: 20px;
 }
-
+.newMinBuyNow{
+    top: 15px;
+    left: 25px;
+    /* height: 50px; */
+}
 .Onegb {
     top: 22px;
     left: 224px;
@@ -180,11 +185,13 @@ video {
     top: 20px;
     left: 45px;
 }
-.newMinOnegb{
+
+.newMinOnegb {
     top: 10px;
     left: 255px;
     height: 50px;
 }
+
 .imageText {
     top: 24px;
     left: 125px;
@@ -206,7 +213,7 @@ video {
     height: 45px;
 }
 
-.newMinImageText{
+.newMinImageText {
     top: 10px;
     left: 150px;
     height: 40px;
@@ -266,4 +273,12 @@ video {
 
 .hidden {
     display: none;
+}
+
+.zeroOpacity {
+    opacity: 0;
+}
+
+.oneOpacity {
+    opacity: 1;
 }

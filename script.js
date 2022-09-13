@@ -5,6 +5,8 @@ let imageTextContainer = document.querySelector('#imageTextContainer');
 let buynow = document.querySelector('#buynow');
 let Onegb = document.querySelector('#Onegb');
 let imageText = document.querySelector('#imageText');
+let imageTextMove = document.querySelector('#imageTextMove');
+
 
 let mute = 1;
 playMute();
@@ -47,6 +49,7 @@ function checkMediaQuery() {
 
 function maxFirst() {
 
+    minSecond();
     imageTextContainer.classList.add('newImageTextContainer');
 
     document.querySelector('.containerBox').classList.add('newContainerBox');
@@ -54,21 +57,24 @@ function maxFirst() {
     document.querySelector('.buynow').classList.add('buynow-move');
     document.querySelector('.Onegb').classList.add('Onegb-move');
 
-    document.querySelector('.imageText').style.opacity = 0;
+    imageText.classList.add('zeroOpacity');
+    imageTextMove.classList.add('oneOpacity');
 
     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
-    document.querySelector('.imageTextMove').style.opacity = 1;
+    // document.querySelector('.imageTextMove').style.opacity = 1;
+
 }
 
 function maxSecond() {
     imageTextContainer.classList.remove('newImageTextContainer');
     containerBox.classList.remove('newContainerBox');
     videoContainer.classList.remove("newVideoContainer");
-    
+
     document.querySelector('.buynow').classList.remove('buynow-move');
     document.querySelector('.Onegb').classList.remove('Onegb-move');
-    document.querySelector('.imageText').style.opacity = 1;
-    document.querySelector('.imageTextMove').style.opacity = 0;
+    imageText.classList.remove('zeroOpacity');
+    imageTextMove.classList.remove('oneOpacity');
+
     document.querySelector('.imageTextMove').classList.remove('imageTextMove-animation');
 }
 
@@ -81,17 +87,11 @@ function minFirst() {
     imageTextContainer.classList.add('newMinImageTextContainer');
     Onegb.classList.add('newMinOnegb');
     imageText.classList.add('newMinImageText');
-    // imageTextContainer.classList.add('newImageTextContainer');
+    buynow.classList.add('newMinBuyNow');
+    buynow.classList.remove('hidden','zeroOpacity');
+    document.querySelector('.imageText').style.opacity = 1;
+    document.querySelector('.imageTextMove').style.opacity = 0;
 
-    // document.querySelector('.containerBox').classList.add('newContainerBox');
-    // document.querySelector('.videoContainer').classList.add('newVideoContainer');
-    // document.querySelector('.buynow').classList.add('buynow-move');
-    // document.querySelector('.Onegb').classList.add('Onegb-move');
-
-    // document.querySelector('.imageText').style.opacity = 0;
-
-    // document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
-    // document.querySelector('.imageTextMove').style.opacity = 1;
 }
 
 function minSecond() {
@@ -100,7 +100,10 @@ function minSecond() {
     videoContainer.classList.remove('newMinVideoContainer');
     imageTextContainer.classList.remove('newMinImageTextContainer');
     Onegb.classList.remove('newMinOnegb');
-    imageText.classList.remove('newMinImageText'); 
+    buynow.classList.remove('newMinBuyNow'); 
+    buynow.classList.add('zeroOpacity');
+    imageText.classList.remove('newMinImageText');
+
 
 }
 
