@@ -68,6 +68,28 @@ video {
     object-fit: contain;
 }
 
+.video-controls{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 3px;
+}
+.material-icons {
+    font-size: 15px;
+}
+#toggle,#sound{
+    color: white;
+    background-color: #2175D6;
+    border: none;
+}
+
+
+
+
 .imageTextContainer {
     position: absolute;
     bottom: 0;
