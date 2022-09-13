@@ -18,18 +18,21 @@ window.addEventListener('resize', checkMediaQuery);
 
 function checkMediaQuery() {
     // If the inner width of the window is greater then 768px
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 600) {
         flexContainer.classList.remove('minFlexContainer');
         containerBox.classList.remove('minContainerBox');
         videoContainer.classList.remove('minVideoContainer');
         imageTextContainer.classList.remove('minImageTextContainer');
-        buynow.classList.remove('hidden');
+        buynow.classList.remove('hidden', 'zeroOpacity');
         Onegb.classList.remove('minOnegb');
         imageText.classList.remove('minImageText');
         listenerIn = maxFirst;
         listenerOut = maxSecond;
         document.querySelector('.containerBox').addEventListener('mouseover', listenerIn);
+        document.querySelector('.containerBox').removeEventListener('mouseover', minFirst);
         document.querySelector('.containerBox').addEventListener('mouseout', listenerOut);
+        document.querySelector('.containerBox').removeEventListener('mouseout', minSecond);
+
     }
     else {
         flexContainer.classList.add('minFlexContainer');
@@ -49,7 +52,7 @@ function checkMediaQuery() {
 
 function maxFirst() {
 
-    minSecond();
+    removeSecond();
     imageTextContainer.classList.add('newImageTextContainer');
 
     document.querySelector('.containerBox').classList.add('newContainerBox');
@@ -58,6 +61,8 @@ function maxFirst() {
     document.querySelector('.Onegb').classList.add('Onegb-move');
 
     imageText.classList.add('zeroOpacity');
+    imageText.classList.remove('oneOpacity');
+
     imageTextMove.classList.add('oneOpacity');
 
     document.querySelector('.imageTextMove').classList.add('imageTextMove-animation');
@@ -66,6 +71,7 @@ function maxFirst() {
 }
 
 function maxSecond() {
+    removeSecond();
     imageTextContainer.classList.remove('newImageTextContainer');
     containerBox.classList.remove('newContainerBox');
     videoContainer.classList.remove("newVideoContainer");
@@ -74,6 +80,7 @@ function maxSecond() {
     document.querySelector('.Onegb').classList.remove('Onegb-move');
     imageText.classList.remove('zeroOpacity');
     imageTextMove.classList.remove('oneOpacity');
+    buynow.classList.remove('zeroOpacity');
 
     document.querySelector('.imageTextMove').classList.remove('imageTextMove-animation');
 }
@@ -88,25 +95,27 @@ function minFirst() {
     Onegb.classList.add('newMinOnegb');
     imageText.classList.add('newMinImageText');
     buynow.classList.add('newMinBuyNow');
-    buynow.classList.remove('hidden','zeroOpacity');
-    document.querySelector('.imageText').style.opacity = 1;
-    document.querySelector('.imageTextMove').style.opacity = 0;
+    buynow.classList.remove('hidden', 'zeroOpacity');
+    document.querySelector('.imageText').classList.add('oneOpacity');
+    document.querySelector('.imageTextMove').classList.add('zeroOpacity');
+    document.querySelector('.imageTextMove').classList.remove('oneOpacity');
+
 
 }
 
 function minSecond() {
+    buynow.classList.add('zeroOpacity');
+removeSecond();
 
+}
+function removeSecond() {
     containerBox.classList.remove('newMinContainerBox');
     videoContainer.classList.remove('newMinVideoContainer');
     imageTextContainer.classList.remove('newMinImageTextContainer');
     Onegb.classList.remove('newMinOnegb');
-    buynow.classList.remove('newMinBuyNow'); 
-    buynow.classList.add('zeroOpacity');
+    buynow.classList.remove('newMinBuyNow');
     imageText.classList.remove('newMinImageText');
-
-
 }
-
 
 
 
